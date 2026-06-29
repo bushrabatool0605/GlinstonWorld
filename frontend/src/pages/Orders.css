@@ -1,0 +1,117 @@
+/* src/pages/Orders.css — REPLACE */
+
+.orders-title {
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 20px; letter-spacing: -0.02em;
+}
+@media (min-width: 640px) { .orders-title { font-size: 26px; } }
+
+.success-banner {
+  padding: 12px 16px; border-radius: var(--r);
+  font-size: 14px; font-weight: 500;
+  margin-bottom: 20px; line-height: 1.5;
+}
+.cod-banner    { background: #d1fae5; color: #065f46; }
+.online-banner { background: #dbeafe; color: #1e40af; }
+
+.orders-list { display: flex; flex-direction: column; gap: 12px; }
+
+/* Order card */
+.order-card { overflow: hidden; transition: box-shadow var(--t); }
+.order-card:hover { box-shadow: var(--shadow-md); }
+
+.order-card-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  padding: 14px 16px 8px; cursor: pointer; user-select: none;
+}
+.order-num { font-size: 13px; font-weight: 700; font-family: monospace; letter-spacing: 0.03em; }
+.order-dt  { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.order-status-wrap { display: flex; align-items: center; gap: 8px; }
+.expand-icon { color: var(--text-3); display: flex; align-items: center; }
+
+/* Items preview */
+.order-items-row {
+  display: flex; flex-wrap: wrap; gap: 5px;
+  padding: 0 16px 10px; cursor: pointer;
+}
+.item-chip {
+  font-size: 12px; color: var(--text-2);
+  background: var(--bg-2); padding: 3px 9px;
+  border-radius: 20px; border: 1px solid var(--border); white-space: nowrap;
+}
+.item-more { font-size: 12px; color: var(--text-3); align-self: center; padding: 0 4px; }
+
+/* Footer */
+.order-card-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 16px 14px; border-top: 1px solid var(--border);
+  flex-wrap: wrap; gap: 8px;
+}
+.footer-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.payment-chip {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 12px; color: var(--text-2);
+  background: var(--bg-2); padding: 3px 10px;
+  border-radius: 20px; border: 1px solid var(--border);
+}
+.order-amount { font-size: 15px; font-weight: 700; color: var(--text-1); }
+
+/* Expanded detail */
+.order-detail {
+  border-top: 1px solid var(--border);
+  padding: 16px; background: var(--bg-2);
+}
+.order-detail-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 540px) { .order-detail-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .order-detail-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+.detail-block-title {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--text-3); margin-bottom: 10px;
+}
+
+/* Items */
+.detail-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.detail-item:last-child { border-bottom: none; }
+.detail-item-thumb {
+  width: 36px; height: 36px; border-radius: 6px;
+  object-fit: cover; flex-shrink: 0; border: 1px solid var(--border);
+}
+.detail-item-name  { flex: 1; font-size: 13px; font-weight: 500; min-width: 0; }
+.detail-item-qty   { font-size: 12px; color: var(--text-2); white-space: nowrap; }
+.detail-item-price { font-size: 13px; font-weight: 600; white-space: nowrap; }
+
+/* Address */
+.detail-addr p {
+  font-size: 13px; color: var(--text-2);
+  display: flex; align-items: flex-start; gap: 6px;
+  line-height: 1.6; margin-bottom: 3px;
+}
+.detail-addr svg { flex-shrink: 0; margin-top: 3px; color: var(--text-3); }
+.addr-indent { padding-left: 18px; font-size: 13px; color: var(--text-2); }
+
+/* Tracking */
+.tracking-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 10px; padding: 8px 12px;
+  background: #dbeafe; color: #1e40af;
+  border-radius: 8px; font-size: 13px;
+}
+
+/* Price rows */
+.detail-price-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-2); padding: 4px 0; }
+.detail-price-row.bold {
+  font-weight: 700; color: var(--text-1);
+  border-top: 1px solid var(--border); padding-top: 8px; margin-top: 4px; font-size: 14px;
+}
+.order-notes {
+  margin-top: 10px; padding: 8px 12px;
+  background: var(--bg-3); border-radius: 8px;
+  font-size: 12px; color: var(--text-2);
+}

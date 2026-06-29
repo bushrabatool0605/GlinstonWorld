@@ -1,0 +1,52 @@
+/* ── Variables ── */
+:root {
+  --sidebar-width: 260px;
+  --transition: 0.3s ease;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 28px;
+}
+
+/* ── Layout ── */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+.admin-main {
+  margin-left: var(--sidebar-width);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: margin-left var(--transition);
+  overflow-x: hidden;
+}
+
+.admin-content {
+  flex: 1;
+  padding: var(--spacing-lg);
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .admin-content {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .admin-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .admin-content {
+    padding: var(--spacing-sm);
+  }
+}

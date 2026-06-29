@@ -1,0 +1,71 @@
+# ============================================================
+# PAYMENT SETUP GUIDE
+# ============================================================
+# This file explains how to set up all payment methods.
+# Read this before running the updated code.
+# ============================================================
+
+
+# ── 1. CASH ON DELIVERY ─────────────────────────────────────
+# No setup needed. Works immediately.
+# COD orders are confirmed right away.
+# Admin marks them 'delivered' when payment is collected.
+
+
+# ── 2. JAZZCASH + EASYPAISA via SAFEPAY ─────────────────────
+#
+# Safepay accepts individual accounts (no business registration).
+# It routes JazzCash and Easypaisa payments for you.
+#
+# Sign up at: https://getsafepay.com
+# Steps:
+#   1. Go to https://getsafepay.com → "Get Started"
+#   2. Select "Individual" account type
+#   3. Provide your CNIC and bank account details
+#   4. Wait 1–2 days for approval
+#   5. Dashboard → Settings → API Keys → Copy keys below
+#
+# SANDBOX (for testing, no real money):
+#   https://sandbox.api.getsafepay.com
+#   Use test credentials from Safepay dashboard
+#
+# PRODUCTION (real money):
+#   https://api.getsafepay.com
+#   Switch SAFEPAY_ENV=production
+
+
+# ── 3. ADD TO YOUR .env FILE ────────────────────────────────
+
+# === Safepay ===
+SAFEPAY_API_KEY=your_safepay_api_key_here
+SAFEPAY_WEBHOOK_SECRET=your_safepay_webhook_secret_here
+SAFEPAY_ENV=sandbox
+
+# === App URLs (for webhooks and redirects) ===
+BACKEND_URL=http://localhost:8000
+FRONTEND_URL=http://localhost:3000
+
+# === COD ===
+COD_ENABLED=true
+COD_MAX_ORDER_AMOUNT=50000
+
+
+# ── 4. WEBHOOK SETUP ────────────────────────────────────────
+# In Safepay dashboard → Settings → Webhooks
+# Add this URL:
+#   Production:  https://yourdomain.com/api/v1/payments/safepay/webhook
+#   Local test:  Use ngrok: ngrok http 8000
+#                Then add: https://xxxx.ngrok.io/api/v1/payments/safepay/webhook
+
+
+# ── 5. TESTING PAYMENTS ─────────────────────────────────────
+# Safepay sandbox test credentials:
+#   JazzCash:  03001234567 / PIN: 1234
+#   Easypaisa: 03111234567 / PIN: 1234
+#   Card:      4111 1111 1111 1111 / 12/26 / 123
+
+
+# ── 6. INSTALL NEW DEPENDENCY ───────────────────────────────
+# Run in your backend folder:
+#   pip install httpx --break-system-packages
+# (httpx is used for calling Safepay API)

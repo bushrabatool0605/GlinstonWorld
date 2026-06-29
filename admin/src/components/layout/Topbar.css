@@ -1,0 +1,51 @@
+.topbar {
+  height: var(--topbar-height);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.topbar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.view-store-btn {
+  font-size: 13px;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .topbar {
+    padding: 0 20px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0 14px 0 56px; /* 56px left — hamburger button ka space */
+  }
+
+  .topbar-title {
+    font-size: 15px;
+  }
+
+  .view-store-btn span {
+    display: none; /* Mobile pe sirf icon dikhao, text hide */
+  }
+}
