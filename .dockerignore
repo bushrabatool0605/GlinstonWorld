@@ -1,0 +1,25 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.env
+backend/.env.example
+
+# Node (not needed in backend image at all)
+frontend/
+admin/
+
+# Git
+.git/
+.gitignore
+.dockerignore
+
+# Misc
+.DS_Store
+Thumbs.db
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
