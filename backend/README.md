@@ -1,3 +1,18 @@
+---
+title: GlinstonWorld Backend API
+emoji: 🛍️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
+# MyStore Backend API
+
+FastAPI backend for MyStore e-commerce platform.
+
+Visit `/docs` for the interactive Swagger UI.
 # E-Commerce Backend — FastAPI + MongoDB
 
 ## Quick Start (5 minutes mein run karo)
