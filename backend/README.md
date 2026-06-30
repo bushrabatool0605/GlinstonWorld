@@ -1,3 +1,4 @@
+---
 title: GlinstonWorld Backend API
 emoji: 🛍️
 colorFrom: blue
@@ -5,12 +6,18 @@ colorTo: purple
 sdk: docker
 app_port: 7860
 pinned: false
+---
 
-# MyStore Backend API
+# GlinstonWorld Backend API
 
-FastAPI backend for MyStore e-commerce platform.
+FastAPI backend for GlinstonWorld e-commerce platform.
 
-Visit `/docs` for the interactive Swagger UI.
+- MongoDB Atlas + Motor (async)
+- JWT authentication
+- Cloudinary image uploads
+- Safepay payment integration (Card, JazzCash, Easypaisa)
+
+API docs available at `/docs` once the Space is running.
 # E-Commerce Backend — FastAPI + MongoDB
 
 ## Quick Start (5 minutes mein run karo)
