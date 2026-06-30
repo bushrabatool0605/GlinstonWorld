@@ -19,11 +19,7 @@ class Settings(BaseSettings):
     MONGODB_URL: str
     DATABASE_NAME: str = "ecommerce_db"
 
-    # Stripe
-    STRIPE_SECRET_KEY: str
-    STRIPE_WEBHOOK_SECRET: str
-    STRIPE_PUBLISHABLE_KEY: str
-
+   
     # Payment Methods
     PAYMENT_METHODS_ENABLED: list = ["cod", "safepay", "jazzcash", "easypaisa"]
 
@@ -40,12 +36,7 @@ class Settings(BaseSettings):
     COD_ENABLED: bool = True
     COD_MAX_ORDER_AMOUNT: float = 50000.0
 
-    # Email
-    MAIL_FROM: str = "noreply@store.com"
-    SMTP_HOST: str = "smtp.gmail.com"
-    SMTP_PORT: int = 587
-    SMTP_USER: str = ""
-    SMTP_PASSWORD: str = ""
+    
 
     model_config = {
         "env_file": str(Path(__file__).resolve().parent.parent.parent / ".env"),
