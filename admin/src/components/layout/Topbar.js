@@ -24,7 +24,7 @@ const Topbar = () => {
       </div>
       <div className="topbar-right">
         <a
-          href="http://localhost:3000"
+          href={process.env.REACT_APP_STORE_URL || "http://localhost:3000"}
           target="_blank"
           rel="noreferrer"
           className="btn btn-outline btn-sm view-store-btn"
